@@ -62,7 +62,7 @@ $save.onclick = function() {
 };
 
 $lips.onkeydown = function(e) {
-  var value = $lips.value,
+  var value = escapeHtml($lips.value),
       limit = Tod.defaults.limit;
   
   if(value.length >= limit) {
@@ -83,10 +83,3 @@ $tods.onclick = function(event) {
     target.children[0].play(0);
   }
 };
-
-setTimeout(function() {
-  Tod.say("I like turtles!", true);
-  setTimeout(function() {
-    Tod.addItem("who said that?");
-  }, 1000);
-}, 10000);
